@@ -27,9 +27,13 @@ class Camera
 public:
 	Camera(camera_desc& desc);
 	~Camera();
-private:
-	dx::XMMATRIX cached_matrix;
+	void set_position(dx::XMVECTOR& position);
+	void set_orientation(float yaw, float pitch, float roll);
+	dx::XMMATRIX view_matrix;
 	dx::XMMATRIX projection_matrix;
+private:
 	dx::XMVECTOR position;
 	float yaw, pitch, roll;
+private:
+	void refresh_view_matrix();
 };
