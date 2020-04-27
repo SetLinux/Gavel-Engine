@@ -36,6 +36,12 @@
     <ClCompile Include="Engine\graphics\graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\graphics\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\graphics\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\io\window.h">
@@ -56,5 +62,21 @@
     <ClInclude Include="Engine\graphics\graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\graphics\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\components\components.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\systems\render_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\graphics\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\base_vertex_shader.hlsl" />
+    <FxCompile Include="shaders\base_pixel_shader.hlsl" />
   </ItemGroup>
 </Project>
