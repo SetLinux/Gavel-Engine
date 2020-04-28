@@ -2,7 +2,7 @@
 
 Camera::Camera(camera_desc& desc)
 {
-	if (desc.camera_type == CameraType::Orthographic)
+	if (desc.camera_type == CameraType::Projeciton)
 	{
 		projection_matrix = dx::XMMatrixPerspectiveFovLH(desc.perspective.fov, desc.perspective.aspect_ratio, desc.near_z, desc.far_z);
 	}
@@ -32,6 +32,6 @@ void Camera::set_orientation(float yaw, float pitch, float roll)
 void Camera::refresh_view_matrix()
 {	dx::XMVECTOR direction{ DirectX::XMScalarCos(DirectX::XMConvertToRadians(yaw)) * DirectX::XMScalarCos(DirectX::XMConvertToRadians(pitch)),DirectX::XMScalarSin(DirectX::XMConvertToRadians(pitch)) ,DirectX::XMScalarSin(DirectX::XMConvertToRadians(yaw)) * DirectX::XMScalarCos(DirectX::XMConvertToRadians(pitch))  , 0.0 };
 	view_matrix = dx::XMMatrixIdentity();
-	view_matrix = dx::XMMatrixLookAtLH(position, dx::XMVectorAdd(position , direction), { 0.0f,1.0f,0.0f });
+	view_matrix *= dx::XMMatrixLookAtLH(position, dx::XMVectorAdd(position , direction), { 0.0f,1.0f,0.0f });
 }
 

@@ -15,7 +15,7 @@ public:
 		bDesc.Usage = D3D11_USAGE_DEFAULT;
 		bDesc.CPUAccessFlags = 0u;
 		bDesc.MiscFlags = 0u;
-		bDesc.ByteWidth = sizeof(T) * vertices.size();
+		bDesc.ByteWidth = (UINT)sizeof(T) * (UINT)vertices.size();
 		bDesc.StructureByteStride = sizeof(T);
 		D3D11_SUBRESOURCE_DATA sd = { 0 };
 		sd.pSysMem = vertices.data();

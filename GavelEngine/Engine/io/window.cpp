@@ -105,7 +105,7 @@ LRESULT Window::WndProc(HWND h_wnd, UINT msg, WPARAM w_param, LPARAM l_param)
 				auto& ri = (RAWINPUT&)(*current->raw_input_buffer.data());
 				if (ri.header.dwType == RIM_TYPEMOUSE) {
 					
-					//	//current->mouse_function((float)ri.data.mouse.lLastX, (float)ri.data.mouse.lLastY);
+					current->mouse_function((float)ri.data.mouse.lLastX, (float)ri.data.mouse.lLastY);
 				}
 			}
 			break;

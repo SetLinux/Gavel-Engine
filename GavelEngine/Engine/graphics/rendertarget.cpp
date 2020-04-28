@@ -38,7 +38,7 @@ void RenderTarget::init(Graphics& gfx)
 	texture_desc.CPUAccessFlags = 0;
 	throw_if_fail(gfx.device->CreateTexture2D(&texture_desc, NULL, &render_target_texture));
 	//modifying it to fit a depth buffer texture requirement
-
+	texture_desc.Format = DXGI_FORMAT::DXGI_FORMAT_R16_TYPELESS;
 	texture_desc.BindFlags &= ~D3D11_BIND_FLAG::D3D11_BIND_RENDER_TARGET;
 	texture_desc.BindFlags |= D3D11_BIND_FLAG::D3D11_BIND_DEPTH_STENCIL;
 	throw_if_fail(gfx.device->CreateTexture2D(&texture_desc, NULL, &depth_target_texture));

@@ -13,6 +13,7 @@ struct Transform
 	dx::XMVECTOR scale;
 	bool is_dirty{ true };
 	dx::XMMATRIX model;
+	dx::XMMATRIX model_inversed;
 };
 struct Renderable
 {
